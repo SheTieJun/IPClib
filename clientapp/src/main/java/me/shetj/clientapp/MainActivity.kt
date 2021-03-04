@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Utils.TAG = "client"
-        SharedMemorySDK.getInstance().bindService(this,"me.shetj.testPlugin","me.shetj.testPlugin.service.ServerClientService")
+        SharedMemorySDK.getInstance().bindService(this,"me.shetj.ipclibdemo","me.shetj.ipclibdemo.service.ServerClientService")
         SharedMemorySDK.getInstance().setBackBufferCallBack { bytes, i ->
             Log.d(Utils.TAG, " 客户端 读取到客户写到共享内存的大小为: " + bytes.size)
         }
         findViewById<View>(R.id.btn_send).setOnClickListener {
             SharedMemorySDK.getInstance().readFile("这是客户端的消息")
         }
-        ShareAIDLSDK.getInstance().bindService(this,"me.shetj.testPlugin","me.shetj.testPlugin.service.AIDLClientService")
+        ShareAIDLSDK.getInstance().bindService(this,"me.shetj.ipclibdemo","me.shetj.ipclibdemo.service.AIDLClientService")
         ShareAIDLSDK.getInstance().setCallBack {
             Log.i(ShareAIDLSDK.TAG, "onCreate: $it")
             Toast.makeText(this,it,Toast.LENGTH_SHORT).show()
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.btn_send2).setOnClickListener {
             ShareAIDLSDK.getInstance().sendToServer("这是客户端2的消息：${System.currentTimeMillis()}")
         }
-        ShareMessengerSDK.getInstance().bindService(this,"me.shetj.testPlugin","me.shetj.testPlugin.service.MessengerServerService")
+        ShareMessengerSDK.getInstance().bindService(this,"me.shetj.ipclibdemo","me.shetj.ipclibdemo.service.MessengerServerService")
         ShareMessengerSDK.getInstance().setCallBack {
             Log.i(ShareAIDLSDK.TAG, "onCreate: $it.data.getString(\"Toast\")")
             Toast.makeText(this,it.data.getString("Toast"),Toast.LENGTH_SHORT).show()
