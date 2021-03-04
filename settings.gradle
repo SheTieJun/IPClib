@@ -1,4 +1,4 @@
-include ':SharedMemory'
+include ':sharedMemory'
 include ':clientapp'
 include ':shareMessenger'
 include ':shareAIDL'
