@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.shetj.ipclibdemo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IPClib">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".service.ServerClientService"
+            android:exported="true"
+            android:process=":memory"/>
+        <service android:name=".service.ServerClient2Service"
+            android:exported="true"/>
+        <service android:name=".service.AIDLClientService"
+            android:exported="true"
+            android:process=":aidl"/>
+        <service android:name=".service.MessengerServerService"
+            android:exported="true"
+            android:process=":messenger"/>
+    </application>
+
+</manifest>

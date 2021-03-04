@@ -1,0 +1,6 @@
+include ':SharedMemory'
+include ':clientapp'
+include ':shareMessenger'
+include ':shareAIDL'
+include ':app'
+rootProject.name = "IPClib"
