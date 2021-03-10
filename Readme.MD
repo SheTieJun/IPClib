@@ -1,8 +1,10 @@
-## IPC
+## IPC android多进程通信
+[![](https://jitpack.io/v/SheTieJun/IPClib.svg)](https://jitpack.io/#SheTieJun/IPClib)
 
 这是一个多进程的通信的lib
 
 `app`module :服务端
+
 `clientapp`: 客户端
 
 ###  [AIDL](shareAIDL)
@@ -14,6 +16,12 @@
 ### [ShareMemory](sharedMemory)
 > 未测试通过，我在Android10上无法通过反射获取到对应 `ParcelFileDescriptor`
 
+### 引入
+```
+com.github.SheTieJun.IPClib:shareAIDL:-SNAPSHOT
+com.github.SheTieJun.IPClib:sharedMemory:-SNAPSHOT
+com.github.SheTieJun.IPClib:shareMessenger:-SNAPSHOT
+```
 
 ### Binder 机制
 
